@@ -1,7 +1,7 @@
 from error import LargoExcedidoException,SubTipoInvalidoException
 from anuncio import Anuncio
 class Campana():
-    MAX = 250
+    MAX = 2
 
     def __init__(self, nombre:str, fecha_inicio:str, fecha_termino:str, anuncio:str):
         self.__nombre = nombre

@@ -31,7 +31,7 @@ try:
 
     Campana.validar_nombre(nom_c)
     Anuncio.validar_tipo(tipo)
-    Campana.validar(tipo)
+
     c = Campana(nom_c, str(fecha_actual).split("  ")[0], '11-05-2024', tipo)
 
     Anuncio.mostrar_formatos(tipo)
@@ -41,12 +41,12 @@ except LargoExcedidoException as e:
     print("Error LargoExcedidoException.", e)
 
     fecha_actual = datetime.now()
-    with open(f"error.log", "a") as log:
+    with open(f"error.log", "a", encoding='utf-8') as log:
             log.write(f"{fecha_actual} - [ERROR]: {e}\n")
 
 except SubTipoInvalidoException as e:
     print("Se produjo error SubTipoInvalidoException.", e)
 
     fecha_actual = datetime.now()
-    with open(f"error.log", "a") as log:
+    with open(f"error.log", "a", encoding='utf-8') as log:
             log.write(f"{fecha_actual} - [ERROR]: {e}\n")
